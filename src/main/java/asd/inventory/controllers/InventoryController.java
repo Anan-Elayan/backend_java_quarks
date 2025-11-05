@@ -8,7 +8,6 @@ import jakarta.ws.rs.core.MediaType;
 @Path(SystemPath.INVENTORY_MANAGEMENT)
 public class InventoryController {
 
-
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String inventoryMessage() {

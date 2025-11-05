@@ -16,7 +16,7 @@ public class JwtGenerator {
     private static final Logger LOG = Logger.getLogger(JwtGenerator.class);
 
     private static final String SECRET = "mySuperSecretKey1234567890!@#ABCDEF";
-    private static final long DEFAULT_EXPIRATION = 10 * 60 * 1000L; // 10 minutes
+    private static final long DEFAULT_EXPIRATION = 60  * 1000L;
 
     private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
 

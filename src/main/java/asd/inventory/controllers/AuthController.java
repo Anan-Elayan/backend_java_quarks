@@ -31,7 +31,7 @@ public class AuthController {
         payload.put("groups", Arrays.asList("Admin", "User"));
         payload.put("app", "InventorySystem");
         payload.put("issuedAt", new Date());
-        payload.put("expiration", new Date(System.currentTimeMillis() + 20 * 60 * 1000L));
+        payload.put("expiration", new Date(System.currentTimeMillis() +  60 * 1000L));
 
         return jwtGenerator.generateToken(payload);
     }

@@ -13,10 +13,6 @@ public class StocksRepository implements PanacheRepository<StockModel> {
         persist(stockModel);
     }
 
-    public List<StockModel> getAllStocks() {
-        return listAll();
-    }
-
     public boolean deleteStockItem(Long id) {
         long deleted = delete("id", id);
         return deleted > 0;

@@ -1,10 +1,12 @@
 package asd.inventory.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
+
 public class UserModel {
 
     @Id
@@ -15,10 +17,10 @@ public class UserModel {
     public String name;
 
     @Column(nullable = false)
-    public double city;
+    public String city;
 
     @Column(nullable = false)
-    public int phoneNumber;
+    public String phoneNumber;
 
     @Column(nullable = false)
     public String password;
@@ -30,11 +32,11 @@ public class UserModel {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public double getCity() { return city; }
-    public void setCity(double city) { this.city = city; }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public int getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(int phoneNumber) { this.phoneNumber = phoneNumber; }
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
     public String getPassword() { return password; }
     public void getPassword(String password) { this.password = password; }
