@@ -4,11 +4,13 @@ import asd.inventory.models.StockModel;
 import asd.inventory.services.StockServices;
 import asd.inventory.utils.constants.SystemPath;
 import asd.inventory.utils.functionality.ErrorMessage;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.container.ContainerRequestContext;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
 import java.util.List;
 
 @Path(SystemPath.INVENTORY_MANAGEMENT + SystemPath.STOCKS)
@@ -19,11 +21,13 @@ public class StockController {
     @Inject
     StockServices stockServices;
 
+
+
     @GET
     @Path(SystemPath.ALL_STOCKS)
+    @RolesAllowed({"User"})
     public List<StockModel> getStocks() {
         return stockServices.getAllStocks();
-
     }
 
     @POST
